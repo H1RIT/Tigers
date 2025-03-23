@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function loadPage(page, callback) {
-    fetch(`../01_html/${page}.html`)
+    fetch(`01_html/${page}.html`)
       .then(response => response.text())
       .then(data => {
         content.innerHTML = data;
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
   }
 
-  fetch("../01_html/header.html")
+  fetch("01_html/header.html")
     .then(response => response.text())
     .then(data => {
       header.innerHTML = data;
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       goHome();
     });
 
-    fetch("../01_html/footer.html")
+    fetch("01_html/footer.html")
     .then(response => response.text())
     .then(data => {
       footer.innerHTML = data;
@@ -646,8 +646,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const img = document.createElement("img");
         img.src = deviceType === "PC"
-          ? `../00_source/02_layout/03_banner/banner_pc_${i + 1}.png`
-          : `../00_source/02_layout/03_banner/banner_mobile_${i + 1}.png`;
+          ? `00_source/02_layout/03_banner/banner_pc_${i + 1}.png`
+          : `00_source/02_layout/03_banner/banner_mobile_${i + 1}.png`;
     
         img.alt = `배너 이미지 ${i + 1}`;
         slideItem.appendChild(img);
