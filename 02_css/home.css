@@ -1,0 +1,217 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100vw;
+  gap: 40px;
+}
+#home .banner {
+  position: relative;
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+}
+#home .banner .slideContainer {
+  position: relative;
+  display: flex;
+}
+#home .banner .slideContainer .slideItem {
+  width: 100%;
+  flex-shrink: 0;
+}
+#home .banner .slideContainer .slideItem img {
+  width: 100%;
+}
+#home .banner > button {
+  display: none;
+}
+#home .banner .indicatorsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 80%;
+}
+#home .banner .indicatorsContainer .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #f8f8f8;
+}
+#home .banner .indicatorsContainer .indicator.active {
+  background: #c00000;
+}
+#home .productSlide {
+  width: 100vw;
+}
+#home .productSlide .title {
+  font: 5rem/1 "GongGothicBold";
+  color: #c00000;
+  white-space: nowrap;
+  text-align: left;
+}
+#home .productSlide .productContainer {
+  width: 100%;
+  position: relative;
+}
+#home .productSlide .productContainer .scrollBtn {
+  display: none;
+}
+#home .productSlide .productContainer .productList {
+  width: 100%;
+  display: flex;
+  background: #fff;
+  border-top: 4px solid #000;
+  border-bottom: 4px solid #000;
+  overflow-x: scroll;
+}
+#home .productSlide .productContainer .productList li {
+  border-right: 4px solid #000;
+  width: 80%;
+  flex-shrink: 0;
+}
+#home .productSlide .productContainer .productList li:last-child {
+  border-right: none;
+}
+#home .productSlide .productContainer .productList li a {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+#home .productSlide .productContainer .productList li a img {
+  width: 100%;
+  vertical-align: top;
+  margin-top: 20px;
+}
+#home .productSlide .productContainer .productList li a .tag {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 15px;
+}
+#home .productSlide .productContainer .productList li a .tag span {
+  display: block;
+}
+#home .productSlide .productContainer .productList li a .tag span.name {
+  font: 2em/1 "GongGothicMedium";
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+#home .productSlide .productContainer .productList li a .tag span.price {
+  font: 1.2em/1 "GongGothicLight";
+  width: 100%;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  #home .banner .indicatorsContainer {
+    gap: 20px;
+  }
+  #home .banner .indicatorsContainer .indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+  }
+  #home .productSlide {
+    width: 100vw;
+  }
+  #home .productSlide .title {
+    font-size: 10rem;
+  }
+  #home .productSlide .productContainer .productList li {
+    width: 40%;
+  }
+  #home .productSlide .productContainer .productList li a .tag span.name {
+    font-size: 2.4em;
+  }
+  #home .productSlide .productContainer .productList li a .tag span.price {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 1025px) {
+  #home .banner {
+    height: auto;
+  }
+  #home .banner > button {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+  }
+  #home .banner > button.prev {
+    transform: rotate(90deg) translateX(-50%);
+    left: 2%;
+  }
+  #home .banner > button.next {
+    transform: rotate(-90deg) translateX(50%);
+    right: 2%;
+  }
+  #home .banner .indicatorsContainer {
+    gap: 10px;
+  }
+  #home .banner .indicatorsContainer .indicator {
+    width: 40px;
+    height: 10px;
+    cursor: pointer;
+  }
+  #home .productSlide {
+    width: 100vw;
+  }
+  #home .productSlide .title {
+    font-size: 12rem;
+  }
+  #home .productSlide .productContainer .scrollBtn {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    padding: 0 30px;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 80%;
+  }
+  #home .productSlide .productContainer .scrollBtn > button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 100%;
+    background: #f8f8f8;
+    cursor: pointer;
+  }
+  #home .productSlide .productContainer .scrollBtn > button.scrollLeft {
+    transform: rotate(90deg);
+  }
+  #home .productSlide .productContainer .scrollBtn > button.scrollRight {
+    transform: rotate(-90deg);
+  }
+  #home .productSlide .productContainer .productList li {
+    width: 30%;
+  }
+  #home .productSlide .productContainer .productList li a .tag span.name {
+    font-size: 2.5em;
+  }
+  #home .productSlide .productContainer .productList li a .tag span.price {
+    font-size: 1.5em;
+  }
+}/*# sourceMappingURL=home.css.map */

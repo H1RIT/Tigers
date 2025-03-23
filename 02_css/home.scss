@@ -1,0 +1,298 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100vw;
+  gap: 40px;
+
+  .banner {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    overflow: hidden;
+
+    .slideContainer {
+      position: relative;
+      display: flex;
+
+      .slideItem {
+        width: 100%;
+        flex-shrink: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    > button {
+      display: none;
+    }
+
+    .indicatorsContainer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 80%;
+
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: #f8f8f8;
+
+        &.active {
+          background: #c00000;
+        }
+      }
+    }
+  }
+
+  .productSlide {
+    width: 100vw;
+
+    .title {
+      font: 5rem/1 "GongGothicBold";
+      color: #c00000;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    .productContainer {
+      width: 100%;
+      position: relative;
+
+      .scrollBtn {
+        display: none;
+      }
+  
+      .productList {
+        width: 100%;
+        display: flex;
+        background: #fff;
+        border-top: 4px solid #000;
+        border-bottom: 4px solid #000;
+        overflow-x: scroll;
+        
+        li {
+          border-right: 4px solid #000;
+          width: 80%;
+          flex-shrink: 0;
+
+          &:last-child {
+            border-right: none;
+          }
+  
+          a {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+  
+            img {
+              width: 100%;
+              vertical-align: top;
+              margin-top: 20px;
+            }
+  
+            .tag {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              padding: 20px 15px;
+  
+              span {
+                display: block;
+  
+                &.name {
+                  font: 2em/1 "GongGothicMedium";
+                  width: 100%;
+                  height: 4rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  word-break: keep-all;
+                  word-wrap: break-word;
+                }
+  
+                &.price {
+                  font: 1.2em/1 "GongGothicLight";
+                  width: 100%;
+                  height: 1.2rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (min-width: 768px) {
+  #home {
+  
+    .banner {
+  
+      .indicatorsContainer {
+        gap: 20px;
+  
+        .indicator {
+          width: 20px;
+          height: 20px;
+          border-radius: 20px;
+        }
+      }
+    }
+
+    .productSlide {
+      width: 100vw;
+  
+      .title {
+        font-size: 10rem;
+      }
+  
+      .productContainer {
+    
+        .productList {
+          
+          li {
+            width: 40%;
+
+            a {
+
+              .tag {
+    
+                span {
+    
+                  &.name {
+                    font-size: 2.4em;
+                  }
+                  &.price {
+                    font-size: 1.3em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// PC
+@media (min-width: 1025px) {
+  #home {
+  
+    .banner {
+      height: auto;
+  
+      > button {
+        display: block;
+        background: none;
+        border: none;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+    
+        &.prev {
+          transform: rotate(90deg) translateX(-50%);
+          left: 2%;
+        }
+    
+        &.next {
+          transform: rotate(-90deg) translateX(50%);
+          right: 2%;
+        }
+      }
+  
+      .indicatorsContainer {
+        gap: 10px;
+  
+        .indicator {
+          width: 40px;
+          height: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .productSlide {
+      width: 100vw;
+  
+      .title {
+        font-size: 12rem;
+      }
+  
+      .productContainer {
+
+        .scrollBtn {
+          display: flex;
+          width: 100%;
+          position: absolute;
+          padding: 0 30px;
+          justify-content: space-between;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 80%;
+  
+          > button {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 100%;
+            background: #f8f8f8;
+            cursor: pointer;
+  
+            &.scrollLeft {
+              transform: rotate(90deg);
+            }
+    
+            &.scrollRight {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+    
+        .productList {
+          
+          li {
+            width: 30%;
+
+            a {
+
+              .tag {
+    
+                span {
+    
+                  &.name {
+                    font-size: 2.5em;
+                  }
+                  &.price {
+                    font-size: 1.5em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

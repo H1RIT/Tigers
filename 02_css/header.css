@@ -1,0 +1,268 @@
+#header {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  border-bottom: 4px solid #000;
+  background: #F8F8F8;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header .navLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#header .navLeft .logo {
+  height: 40px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 10px;
+}
+#header .navLeft .logo img {
+  height: 100%;
+  position: relative;
+}
+#header .navLeft .menuBox {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  top: 60px;
+  background: #F8F8F8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+  left: 100vw;
+  transition: all 0.3s;
+  z-index: 10;
+}
+#header .navLeft .menuBox.active {
+  left: 0;
+}
+#header .navLeft .menuBox .menuItem {
+  width: 100%;
+}
+#header .navLeft .menuBox .menuItem a {
+  font: 4.5rem "GongGothicBold";
+  display: block;
+  width: 100%;
+  padding-left: 30px;
+  transition: all 0.3s;
+}
+#header .navLeft .menuBox .menuItem .submenu {
+  height: 0;
+  width: 100vw;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+#header .navLeft .menuBox .menuItem .submenu .subItem {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+#header .navLeft .menuBox .menuItem .submenu .subItem a {
+  font-size: 2rem;
+  padding-left: 31px;
+}
+#header .navLeft .menuBox .menuItem .submenu .subItem.active > a {
+  color: #c00000;
+}
+#header .navLeft .menuBox .menuItem.active > a {
+  color: #c00000;
+}
+#header .navLeft .menuBox .hide {
+  margin-top: 10px;
+}
+#header .navLeft .menuBox .hide ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-left: 30px;
+}
+#header .navLeft .menuBox .hide ul li a {
+  font: 1.1rem "GongGothicMedium";
+}
+#header .navRight {
+  display: flex;
+  gap: 10px;
+}
+#header .navRight .user {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#header .navRight .user li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+#header .navRight .user li a:hover img {
+  display: none;
+}
+#header .navRight .user li a:hover img.hover {
+  display: block;
+}
+#header .navRight .user li img {
+  height: 30px;
+  position: absolute;
+}
+#header .navRight .user li img.hover {
+  display: none;
+}
+#header .navRight .user li:nth-child(1) img {
+  width: 110%;
+  top: 7px;
+  left: -1px;
+}
+#header .navRight .user li:nth-child(2) img {
+  top: 6px;
+  left: 5px;
+}
+#header .navRight .user li:nth-child(3) img {
+  width: 80%;
+  top: 7px;
+  left: 4px;
+}
+#header .navRight .user li:nth-child(4) img {
+  top: 6px;
+  left: 5px;
+}
+#header .navRight .user li.hide {
+  display: none;
+}
+#header .navRight .menuBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border-left: 4px solid #000;
+}
+#header .navRight .menuBtn .spans {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+#header .navRight .menuBtn .spans span {
+  width: 30px;
+  height: 3px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+#header .navRight .menuBtn.active .spans {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header .navRight .menuBtn.active .spans span {
+  position: absolute;
+  transform-origin: center;
+}
+#header .navRight .menuBtn.active .spans span:nth-child(1) {
+  transform: rotate(45deg);
+}
+#header .navRight .menuBtn.active .spans span:nth-child(2) {
+  width: 0;
+}
+#header .navRight .menuBtn.active .spans span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  #header .navLeft .logo {
+    padding-left: 20px;
+  }
+  #header .navLeft .menuBox .menuItem a {
+    font-size: 6rem;
+  }
+  #header .navLeft .menuBox .menuItem .submenu li a {
+    font-size: 3rem;
+  }
+  #header .navLeft .menuBox .menuItem.hide ul li a {
+    font-size: 2rem;
+  }
+  #header .navRight .user li.hide {
+    display: block;
+  }
+}
+@media (min-width: 1025px) {
+  #header {
+    padding: 0 20px;
+  }
+  #header .navLeft {
+    gap: 50px;
+  }
+  #header .navLeft .logo {
+    padding-left: 0;
+  }
+  #header .navLeft .menuBox {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    left: 0;
+    top: 0;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+    background: none;
+    width: auto;
+    text-align: center;
+  }
+  #header .navLeft .menuBox .menuItem {
+    width: auto;
+  }
+  #header .navLeft .menuBox .menuItem > a {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.6rem;
+    padding: 0;
+    top: 0;
+    left: 0;
+  }
+  #header .navLeft .menuBox .menuItem .submenu {
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    top: 56px;
+    left: 0;
+    gap: 20px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+    background: #F8F8F8;
+  }
+  #header .navLeft .menuBox .menuItem .submenu .subItem > a {
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+  }
+  #header .navLeft .menuBox .menuItem.active .submenu {
+    height: 50px;
+    border-bottom: 4px solid #000;
+  }
+  #header .navLeft .menuBox .hide {
+    display: none;
+  }
+  #header .navRight .user {
+    gap: 6px;
+  }
+  #header .navRight .menuBtn {
+    display: none;
+  }
+}/*# sourceMappingURL=header.css.map */

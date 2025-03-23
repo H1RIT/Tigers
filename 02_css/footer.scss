@@ -1,0 +1,187 @@
+#footer {
+  width: 100%;
+  overflow-x: hidden;
+  // position: absolute;
+  // left: 0;
+  // bottom: 0;
+  
+  .service {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+
+    > section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      
+      .subTitle {
+        font: 2.2rem/1 "GongGothicBold";
+        padding-left: 10px;
+        margin-bottom: 3px;
+      }
+
+      > div {
+        box-sizing: content-box;
+        display: flex;
+        border-top: 3px solid #000;
+        border-bottom: 3px solid #000;
+      }
+
+      .noticeList {
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        height: 35px;
+
+        a {
+          font: 1em/1 "GongGothicLight";
+          width: 100%;
+          height: 35px;
+          display: flex;
+          flex-shrink: 0;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 10px;
+
+          p {
+            padding-top: 2px;
+          }
+
+          img {
+            width: 10px;
+            rotate: -90deg;
+          }
+        }
+      }
+
+      .csList {
+        width: calc(100vw + 4px);
+        height: 35px;
+
+        a {
+          font: 1em/1 "GongGothicLight";
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-right: 3px solid #000;
+
+          p {
+            padding-top: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    font: .9rem "Paperlogy-5Medium";
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 60px;
+    gap: 40px;
+
+    a {
+      color: #fff;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+
+      .footerLogo {
+        width: 100px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .terms {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        a {
+          font: .9rem "Paperlogy-5Medium";
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+
+      .etc {
+        font-family: "Paperlogy-3Light";
+        text-align: left;
+      }
+    }
+
+    .copyright {
+      font: .9rem "Paperlogy-5Mediums";
+    }
+  }
+}
+
+// Tablet
+@media (min-width: 768px) {
+  #footer {
+    width: 100%;
+    
+    .service {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 0;
+
+      > section {
+        width: 50%;
+
+        .subTitle {
+          padding-left: 20px;
+        }
+
+        > div {
+          border-right: 3px solid #000;
+        }
+
+        .noticeList {
+
+          a {
+            padding: 0 20px;
+          }
+        }
+
+        .csList {
+          width: calc(50vw + 4px);
+
+          a {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    .footer {
+      padding: 30px 30px 60px;
+    }
+  }
+}
+
+// PC
+@media (min-width: 1025px) {
+  #footer {
+
+    .footer {
+      padding: 50px 30px 30px;
+    }
+  }
+}

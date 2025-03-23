@@ -1,0 +1,449 @@
+$buttons-height: 45px;
+$option-box-height: 35px;
+
+#content {
+
+  #item {
+    width: 100vw;
+
+    .itemInfo {
+      width: 100%;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .itemTop {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 5%;
+
+        .itemCategory {
+          font: 1.1rem/1 "GongGothicLight";
+          text-align: left;
+          color: #ccc;
+
+          a {
+            color: #ccc;
+
+            span {
+              font-family: "GongGothicMedium";
+              color: #c00000;
+            }
+          }
+        }
+        
+        .itemMainImg {
+
+          > img {
+            width: 100%;
+            border: 3px solid #000;
+          }
+        }
+        
+        .itemName {
+          font: 2.2rem/1 "GongGothicBold";
+          text-align: left;
+        }
+  
+        .itemPrice {
+          font: 1.5rem/1 "GongGothicMedium";
+          text-align: left;
+        }
+      }
+
+      .itemInfoImg {
+        
+        > img {
+          width: 100%;
+        }
+      }
+    }
+
+    .itemOptionBox {
+      width: 100%;
+
+      .bottomSheet {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        background: #f8f8f8;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        transition: all .3s;
+        z-index: 1;
+        overflow: hidden;
+        transition: bottom .3s;
+
+        &.active {
+          bottom: $buttons-height;
+          border-top: 3px solid #000;
+        }
+
+        .dragHandle {
+          width: 50px;
+          height: 5px;
+          border-radius: 5px;
+          background: #ccc;
+          flex-shrink: 0;
+        }
+
+        .itemName {
+          display: none;
+        }
+
+        .itemSelectBoxes {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 10px;
+          padding: 0 40px;
+          position: relative;
+          overflow: hidden;
+  
+          .itemSelectContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+            position: relative;
+            top: 0;
+  
+            > label {
+              font: 1rem/1 "GongGothicMedium";
+            }
+  
+            .itemSelectBox {
+              cursor: pointer;
+              font: .8rem/1 "GongGothicLight";
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+              position: relative;
+  
+              .selectedBox {
+                width: 100%;
+                display: flex;
+                flex-shrink: 0;
+                height: $option-box-height;
+                background: #fff;
+                border: 2px solid #000;
+                z-index: 1;
+  
+                .selected {
+                  color: #aaa;
+                  display: flex;
+                  align-items: center;
+                  padding-left: 10px;
+                }
+  
+                .arrow {
+                  width: $option-box-height;
+                  height: 100%;
+                  margin-left: auto;
+                  border-left: 2px solid #000;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+  
+                  > img {
+                    width: 12px;
+                  }
+                }
+              }
+  
+              .optionContainer {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border: 2px solid #000;
+                background: #fff;
+                color: #000;
+                position: relative;
+                top: -4px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height .5s;
+
+                &.active {
+                  max-height: 270px;
+                }
+        
+                .option {
+                  width: 100%;
+                  padding: 10px;
+                  height: $option-box-height;
+                }
+              }
+            }
+          }
+        }
+
+        .stepper {
+          height: 35px;
+          border: 2px solid #000;
+          background: #fff;
+          margin-left: auto;
+          display: flex;
+          justify-content: space-between;
+          flex-shrink: 0;
+          margin-right: 40px;
+  
+          > button {
+            border: none;
+            width: 35px;
+            height: 100%;
+            background: #fff;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2px;
+            font: 1rem/1 "GongGothicMedium";
+  
+            &.decrease {
+              border-right: 2px solid #000;
+            }
+  
+            &.increase {
+              border-left: 2px solid #000;
+            }
+          }
+  
+          > input {
+            border: none;
+            height: 100%;
+            padding: 0;
+            width: 100px;
+            text-align: center;
+            padding-top: 1px;
+            font: 1rem/1 "GongGothicMedium";
+
+            &:focus {
+              outline: none;
+            }
+            
+          }
+        }
+  
+        .line {
+          width: calc(100% - 80px);
+          height: 2px;
+          background: #000;
+        }
+  
+        .totalPrice {
+          font: 1.5rem/1 "GongGothicMedium";
+          margin-left: auto;
+          margin-right: 40px;
+        }
+      }
+
+      .itemButtons {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        height: $buttons-height;
+        z-index: 2;
+        border-top: 3px solid #000;
+
+        > button {
+          width: calc(100% - $buttons-height);
+          height: $buttons-height;
+          border-radius: 0;
+          border: none;
+          height: 100%;
+          padding: 0;
+          transition: width .3s;
+          overflow: hidden;
+          font: 1rem/1 "GongGothicMedium";
+
+          &.addLike {
+            width: $buttons-height;
+            background: #000;
+            color: #fff;
+            font: 1.2rem/1 "SBAggroB";
+            padding-top: 1px;
+          }
+
+          &.addCart {
+            width: 0;
+            border: none;
+            color: #fff;
+          }
+
+          &.buyNow {
+            background: #c00000;
+            color: #fff;
+          }
+        }
+
+        &.active {
+          width: 100%;
+          border-top: 2px solid #000;
+
+          > button {
+            width: 50%;
+  
+            &.addLike {
+              width: 0;
+              border: none;
+              color: #000;
+            }
+
+            &.addCart {
+              display: block;
+              background: #fff;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (min-width: 768px) {
+
+}
+
+// PC
+@media (min-width: 1025px) {
+  #content {
+
+    #item {
+      display: flex;
+  
+      .itemInfo {
+        width: 60%;
+        border-right: 1.5px solid #eee;
+
+        .itemTop {
+
+          .itemCategory {
+            font-size: 1.3rem;
+          }
+
+          .itemMainImg {
+  
+            > img {
+              border: 4px solid #000;
+            }
+          }
+        }
+      }
+  
+      .itemOptionBox {
+        position: fixed;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        padding: 0 100px;
+        gap: 30px;
+  
+        .bottomSheet {
+          position: relative;
+          padding: 0;
+          gap: 30px;
+  
+          .dragHandle {
+            display: none;
+          }  
+                    
+          .itemName {
+            display: block;
+            font: 2.2rem/1 "GongGothicBold";
+            text-align: left;
+            margin-right: auto;
+          }
+          
+          .itemSelectBoxes {
+            padding: 0;
+    
+            .itemSelectContainer {
+    
+              > label {
+                font: 1rem/1 "GongGothicMedium";
+              }
+    
+              .itemSelectBox {
+                cursor: pointer;
+                font: .8rem/1 "GongGothicLight";
+              }
+            }
+          }
+  
+          .stepper {
+            margin-right: 0;
+
+            > button {
+              cursor: pointer;
+
+              &:hover {
+                color: #c00000;
+              }
+            }
+          }
+    
+          .line {
+            width: 100%;
+          }
+    
+          .totalPrice {
+            margin-right: 0;
+          }
+        }
+  
+        .itemButtons {
+          position: relative;
+          border: 3px solid #000;
+  
+          > button {
+            cursor: pointer;
+  
+            &.addLike {
+              width: $buttons-height;
+              padding-top: 3px;
+
+              &:hover {
+                color: #c00000;
+              }
+            }
+  
+            &.addCart {
+              width: calc(50% - $buttons-height / 2);
+              display: block;
+              background: #fff;
+              color: #000;
+              border-right: 2px solid #000;
+
+              &:hover {
+                color: #c00000;
+                background: #fff;
+              }
+            }
+  
+            &.buyNow {
+              width: calc(50% - $buttons-height / 2);
+
+              &:hover {
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
